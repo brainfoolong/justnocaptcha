@@ -39,8 +39,8 @@ protection). But we still use the word captcha as almost everyone is used to it.
 
 ```
 PHP: composer require brainfoolong/justnocaptcha
-NPM: npm install @brainfoolong/justnocaptcha
-BUN: bun install @brainfoolong/justnocaptcha
+NPM: npm install justnocaptcha
+BUN: bun install justnocaptcha
 Or download a release and use the required distribution file
 ```
 
