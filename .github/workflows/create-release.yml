@@ -1,0 +1,46 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install deps
+        run: bun install
+
+      - name: Run build progress
+        run: bun run dist
+
+      - name: Run tests
+        run: cd tests && bash run-all-tests.sh
+
+      - name: Draft release
+        uses: softprops/action-gh-release@v2
+        with:
+          token:  ${{ secrets.TOKEN }}
+          draft: true
+          files: |
+            js/justnocaptcha.js
+            js/justnocaptcha.min.js
+            js/justnocaptcha-browser.js
+            js/justnocaptcha-browser.min.js
+            js/justnocaptcha-browser-slim.js
+            js/justnocaptcha-browser-slim.min.js
+            ts/justnocaptcha.ts
+            go/justnocaptcha.go
+            go/go.mod
+            php/JustNoCaptcha.php
+            LICENSE
+            README.md

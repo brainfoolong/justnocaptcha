@@ -1,0 +1,27 @@
+services:
+  bun:
+    image: docker.io/oven/bun:latest
+    restart: on-failure
+    volumes:
+      - ../:/justnocaptcha
+  nodejs:
+    image: docker.io/node:16
+    restart: on-failure
+    volumes:
+      - ../:/justnocaptcha
+  php:
+    image: docker.io/php:8.0-cli
+    restart: on-failure
+    volumes:
+      - ../:/justnocaptcha
+  golang:
+    image: docker.io/golang:latest
+    restart: on-failure
+    volumes:
+      - ../:/justnocaptcha
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.54.1-noble
+    # update @playwright/test in package.json as well when changing version
+    restart: on-failure
+    volumes:
+      - ../:/justnocaptcha

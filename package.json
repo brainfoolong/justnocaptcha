@@ -1,0 +1,24 @@
+{
+  "name": "@brainfoolong/justnocaptcha",
+  "description": "Proof of Work Captcha/Challenge/Brute Force protection for your browser and server, without any required user interaction.",
+  "version": "0.1.0",
+  "scripts": {
+    "dist": "node ./node_modules/typescript/bin/tsc --project tsconfig.json && node build/dist.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brainfoolong/justnocaptcha.git"
+  },
+  "author": "BrainFooLong (Roland Eigelsreiter)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brainfoolong/justnocaptcha/issues"
+  },
+  "homepage": "https://github.com/brainfoolong/justnocaptcha",
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@types/node": "^24.0.14",
+    "typescript": "^5.8.3",
+    "uglify-js": "^3.19.3"
+  }
+}
